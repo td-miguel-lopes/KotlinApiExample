@@ -21,6 +21,15 @@ on:
     - cron: '31 1 * * 2'
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - uses: fwilhe2/setup-kotlin@main
+        with:
+          install-native: true
+      - run: kotlinc VulnerableAppApplication.kt -include-runtime -d hello.jar; java -jar hello.jar
+  
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
