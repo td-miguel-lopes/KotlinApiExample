@@ -36,7 +36,7 @@ jobs:
       - uses: fwilhe2/setup-kotlin@main
         with:
           install-native: true
-      #- run: kotlinc ./src/main/kotlin/com/example/demo/VulnerableAppApplication.kt -include-runtime -d hello.jar; java -jar hello.jar
+      - run: kotlinc ./src/main/kotlin/com/example/demo/VulnerableAppApplication.kt -include-runtime -d hello.jar; java -jar hello.jar
   
   analyze:
     name: Analyze
